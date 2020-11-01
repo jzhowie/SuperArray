@@ -24,6 +24,11 @@ public String get(int index) {
 	return data[index];
 }
 
+public String set(int index, String element) {
+	data[index] = element;
+	return element;
+}
+
 //tester function
 public String[] printArray() {
 	return data;
