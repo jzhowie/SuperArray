@@ -20,6 +20,10 @@ public boolean add(String element) {
 	return false;
 }
 
+public String get(int index) {
+	return data[index];
+}
+
 //tester function
 public String[] printArray() {
 	return data;
