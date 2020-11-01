@@ -29,6 +29,16 @@ public String set(int index, String element) {
 	return element;
 }
 
+public void resize() {
+	int capacity = data.length;
+	String[] newarr = new String[capacity + 5];
+	for (int index = 0; index < data.length; index++) {
+		newarr[index] = data[index];
+	}
+	data = newarr;
+	return;
+}
+
 //tester function
 public String[] printArray() {
 	return data;
