@@ -7,6 +7,10 @@ public SuperArray() {
 	data = new String[10];
 }
 
+public int size() {
+	return size;
+}
+
 //tester function
 public String[] printArray() {
 	return data;
