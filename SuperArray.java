@@ -7,6 +7,11 @@ public SuperArray() {
 	data = new String[10];
 }
 
+public SuperArray(int initialCapacity) {
+	size = 0;
+	data = new String[initialCapacity];
+}
+
 public int size() {
 	return size;
 }
@@ -68,8 +73,8 @@ public boolean contains(String s) {
 	}
 	return false;
 }
-//tester function
 
+//tester function
 public String[] printArray() {
 	return data;
 }
