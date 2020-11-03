@@ -40,7 +40,9 @@ public void resize() {
 }
 
 //tester function
-public String[] printArray() {
-	return data;
-}
+/*
+   public String[] printArray() {
+        return data;
+   }
+ */
 }
