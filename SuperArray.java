@@ -25,6 +25,15 @@ public boolean add(String element) {
 	return true;
 }
 
+public void add(int index, String element) {
+	for (int i = size - 1; i >= index; i--) {
+		data[i+1] = data[i];
+	}
+	data[index] = element;
+	size++;
+	return;
+}
+
 public String get(int index) {
 	return data[index];
 }
@@ -36,7 +45,7 @@ public String set(int index, String element) {
 
 public void resize() {
 	int capacity = data.length;
-	String[] newarr = new String[capacity + 5];
+	String[] newarr = new String[capacity * 2];
 	for (int index = 0; index < data.length; index++) {
 		newarr[index] = data[index];
 	}
@@ -56,7 +65,7 @@ public void clear() {
 public String toString() {
 	String value = "[";
 	for (int index = 0; index < size; index++) {
-		value = value + data[index];
+		value = value + get(index);
 		if (index != size - 1) {
 			value += ", ";
 		}
@@ -67,7 +76,7 @@ public String toString() {
 
 public boolean contains(String s) {
 	for (int index = 0; index < data.length; index++) {
-		if (data[index] != null && data[index].equals(s)) {
+		if (s.equals(get(index))) {
 			return true;
 		}
 	}
