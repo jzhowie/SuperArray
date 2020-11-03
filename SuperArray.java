@@ -59,6 +59,15 @@ public String toString() {
 	value += "]";
 	return value;
 }
+
+public boolean contains(String s) {
+	for (int index = 0; index < data.length; index++) {
+		if (data[index] != null && data[index].equals(s)) {
+			return true;
+		}
+	}
+	return false;
+}
 //tester function
 
 public String[] printArray() {
