@@ -39,10 +39,19 @@ public void resize() {
 	return;
 }
 
+public boolean isEmpty() {
+	if (size == 0) return true;
+	return false;
+}
+
+public void clear() {
+	size = 0;
+	data = new String[10];
+}
 //tester function
-/*
-   public String[] printArray() {
-        return data;
-   }
- */
+
+public String[] printArray() {
+	return data;
+}
+
 }
