@@ -40,13 +40,24 @@ public void resize() {
 }
 
 public boolean isEmpty() {
-	if (size == 0) return true;
-	return false;
+	return size == 0;
 }
 
 public void clear() {
 	size = 0;
 	data = new String[10];
+}
+
+public String toString() {
+	String value = "[";
+	for (int index = 0; index < size; index++) {
+		value = value + data[index];
+		if (index != size - 1) {
+			value += ", ";
+		}
+	}
+	value += "]";
+	return value;
 }
 //tester function
 
