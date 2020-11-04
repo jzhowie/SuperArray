@@ -75,12 +75,16 @@ public String toString() {
 }
 
 public boolean contains(String s) {
+	return indexOf(s) != -1;
+}
+
+public int indexOf(String s) {
 	for (int index = 0; index < data.length; index++) {
 		if (s.equals(get(index))) {
-			return true;
+			return index;
 		}
 	}
-	return false;
+	return -1;
 }
 
 //tester function
