@@ -34,6 +34,15 @@ public void add(int index, String element) {
 	return;
 }
 
+public String remove(int index) {
+	String removed = data[index];
+	for (int i = index; i < size; i++) {
+		data[i] = data[i+1];
+	}
+	size--;
+	return removed;
+}
+
 public String get(int index) {
 	return data[index];
 }
