@@ -96,6 +96,14 @@ public int indexOf(String s) {
 	return -1;
 }
 
+public String[] toArray() {
+	String[] newarr = new String[size];
+	for (int index = 0; index < size; index++) {
+		newarr[index] = data[index];
+	}
+	return newarr;
+}
+
 //tester function
 public String[] printArray() {
 	return data;
