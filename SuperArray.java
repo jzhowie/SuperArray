@@ -36,10 +36,13 @@ public void add(int index, String element) {
 
 public String remove(int index) {
 	String removed = data[index];
-	for (int i = index; i < size; i++) {
-		data[i] = data[i+1];
+	if (index < size) {
+		for (int i = index; i < size; i++) {
+			data[i] = data[i+1];
+		}
+		data[size - 1] = null;
+		size--;
 	}
-	size--;
 	return removed;
 }
 
@@ -89,7 +92,7 @@ public boolean contains(String s) {
 
 public int indexOf(String s) {
 	for (int index = 0; index < data.length; index++) {
-		if (s.equals(get(index))) {
+		if (data[index] != null && data[index].equals(s)) {
 			return index;
 		}
 	}
