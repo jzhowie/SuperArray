@@ -26,6 +26,9 @@ public boolean add(String element) {
 }
 
 public void add(int index, String element) {
+	if (size + 1 > data.length) {
+		resize();
+	}
 	for (int i = size - 1; i >= index; i--) {
 		data[i+1] = data[i];
 	}
@@ -36,13 +39,11 @@ public void add(int index, String element) {
 
 public String remove(int index) {
 	String removed = data[index];
-	if (index < size) {
-		for (int i = index; i < size; i++) {
-			data[i] = data[i+1];
-		}
-		data[size - 1] = null;
-		size--;
+	for (int i = index; i + 1 < size; i++) {
+		data[i] = data[i+1];
 	}
+	data[size - 1] = null;
+	size--;
 	return removed;
 }
 
@@ -51,8 +52,9 @@ public String get(int index) {
 }
 
 public String set(int index, String element) {
+	String replaced = data[index];
 	data[index] = element;
-	return element;
+	return replaced;
 }
 
 public void resize() {
