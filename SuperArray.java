@@ -101,7 +101,7 @@ public int indexOf(String s) {
 	return -1;
 }
 
-public int lastindexOf(String s) {
+public int lastIndexOf(String s) {
 	for (int index = size - 1; index > -1; index--) {
 		if (data[index] != null && data[index].equals(s)) {
 			return index;
@@ -111,6 +111,9 @@ public int lastindexOf(String s) {
 }
 
 public boolean equals(SuperArray other) {
+	if (size != other.size) {
+		return false;
+	}
 	for (int index = 0; index < size; index++) {
 		if (data[index].equals(other.data[index]) == false) {
 			return false;
