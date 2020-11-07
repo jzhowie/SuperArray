@@ -29,7 +29,7 @@ public static SuperArray findOverlap(SuperArray a, SuperArray b) {
 
 public static SuperArray zip(SuperArray a, SuperArray b) {
 	SuperArray zip = new SuperArray();
-	for (int x = 0; x < a.size(); x++) {
+	for (int x = 0; x < Math.min(a.size(), b.size()); x++) {
 		zip.add(a.get(x));
 		zip.add(b.get(x));
 	}
@@ -105,5 +105,60 @@ public static void main(String[] args) {
 	System.out.println(citiesA);
 	System.out.println(citiesB);
 	System.out.println(findOverlap(citiesA, citiesB));
+
+	System.out.println("\n" + "zip()");
+	SuperArray testA = new SuperArray();
+	SuperArray testB = new SuperArray();
+
+	System.out.println("Both empty: Any errors?");
+	System.out.println(testA);
+	System.out.println(testB);
+	System.out.println(zip(testA, testB));
+
+	System.out.println("\n" + "One empty: Any errors?");
+	testA.add("a");
+	testA.add("b");
+
+	System.out.println(testA);
+	System.out.println(testB);
+	System.out.println(zip(testA, testB));
+
+	System.out.println("\n" + "Same Length: Any errors?");
+	testB.add("1");
+	testB.add("2");
+
+	System.out.println(testA);
+	System.out.println(testB);
+	System.out.println(zip(testA, testB));
+
+	System.out.println("\n" + "First shorter: Any errors?");
+	testA.add("c");
+	testA.add("d");
+
+	System.out.println(testA);
+	System.out.println(testB);
+	System.out.println(zip(testA, testB));
+
+	System.out.println("\n" + "First shorter: Any errors?");
+	testB.add("3");
+	testB.add("4");
+	testB.add("5");
+	testB.add("6");
+	testB.add("7");
+
+	System.out.println(testA);
+	System.out.println(testB);
+	System.out.println(zip(testA, testB));
+
+	System.out.println("\n" + "Equal again: Any errors?");
+	testA.add("e");
+	testA.add("f");
+	testA.add("g");
+
+	System.out.println(testA);
+	System.out.println(testB);
+	System.out.println(zip(testA, testB));
+
+	System.out.println("\n" + "If you made it to this line, you probably don't have any glaring errors, but still check for logical issues.");
 }
 }
