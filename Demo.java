@@ -26,6 +26,27 @@ public static SuperArray findOverlap(SuperArray a, SuperArray b) {
 	return overlap;
 }
 
+
+public static SuperArray zip(SuperArray a, SuperArray b) {
+	SuperArray zip = new SuperArray();
+	for (int x = 0; x < a.size(); x++) {
+		zip.add(a.get(x));
+		zip.add(b.get(x));
+	}
+
+	if (a.size() < b.size()) {
+		for (int x = a.size(); x < b.size(); x++) {
+			zip.add(b.get(x));
+		}
+	}
+	if (b.size() < a.size()) {
+		for (int x = b.size(); x < a.size(); x++) {
+			zip.add(a.get(x));
+		}
+	}
+	return zip;
+}
+
 public static void main(String[] args) {
 	System.out.println("Remove duplicates:");
 	SuperArray words = new SuperArray();
