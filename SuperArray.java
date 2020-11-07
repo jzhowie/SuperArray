@@ -93,13 +93,32 @@ public boolean contains(String s) {
 }
 
 public int indexOf(String s) {
-	for (int index = 0; index < data.length; index++) {
+	for (int index = 0; index < size; index++) {
 		if (data[index] != null && data[index].equals(s)) {
 			return index;
 		}
 	}
 	return -1;
 }
+
+public int lastindexOf(String s) {
+	for (int index = size - 1; index > -1; index--) {
+		if (data[index] != null && data[index].equals(s)) {
+			return index;
+		}
+	}
+	return -1;
+}
+/*
+   public boolean equals(SuperArray other) {
+        for (int index = 0; index < size; index++) {
+                if (data[index].equals(other.data[index]) == false) {
+                        return false;
+                }
+        }
+        return true;
+   }
+ */
 
 public String[] toArray() {
 	String[] newarr = new String[size];
