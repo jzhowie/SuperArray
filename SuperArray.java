@@ -109,16 +109,16 @@ public int lastindexOf(String s) {
 	}
 	return -1;
 }
-/*
-   public boolean equals(SuperArray other) {
-        for (int index = 0; index < size; index++) {
-                if (data[index].equals(other.data[index]) == false) {
-                        return false;
-                }
-        }
-        return true;
-   }
- */
+
+public boolean equals(SuperArray other) {
+	for (int index = 0; index < size; index++) {
+		if (data[index].equals(other.data[index]) == false) {
+			return false;
+		}
+	}
+	return true;
+}
+
 
 public String[] toArray() {
 	String[] newarr = new String[size];
