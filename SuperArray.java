@@ -8,6 +8,9 @@ public SuperArray() {
 }
 
 public SuperArray(int initialCapacity) {
+	if (initialCapacity < 0) {
+		throw new IllegalArgumentException("Capacity (" + initialCapacity + ") cannot be negative.");
+	}
 	size = 0;
 	data = new String[initialCapacity];
 }
@@ -26,6 +29,9 @@ public boolean add(String element) {
 }
 
 public void add(int index, String element) {
+	if (index < 0 || index > size()) {
+		throw new IndexOutOfBoundsException("Index (" + index + ") out of range.");
+	}
 	if (size + 1 > data.length) {
 		resize();
 	}
@@ -38,6 +44,9 @@ public void add(int index, String element) {
 }
 
 public String remove(int index) {
+	if (index < 0 || index >= size()) {
+		throw new IndexOutOfBoundsException("Index (" + index + ") out of range.");
+	}
 	String removed = data[index];
 	for (int i = index; i + 1 < size; i++) {
 		data[i] = data[i+1];
@@ -48,17 +57,23 @@ public String remove(int index) {
 }
 
 public String get(int index) {
+	if (index < 0 || index >= size()) {
+		throw new IndexOutOfBoundsException("Index (" + index + ") out of range.");
+	}
 	return data[index];
 }
 
 public String set(int index, String element) {
+	if (index < 0 || index >= size()) {
+		throw new IndexOutOfBoundsException("Index (" + index + ") out of range.");
+	}
 	String replaced = data[index];
 	data[index] = element;
 	return replaced;
 }
 
 public void resize() {
-	int capacity = data.length;
+	int capacity = data.length + 1;
 	String[] newarr = new String[capacity * 2];
 	for (int index = 0; index < data.length; index++) {
 		newarr[index] = data[index];
